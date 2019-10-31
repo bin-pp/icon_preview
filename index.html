@@ -21,10 +21,12 @@
                     reader.onload = function(e) {
                         var img = document.getElementById("preview");
                         img.setAttribute("src", e.target.result);
+                    }
+                    input.onload = function() {
                         marginLeft = (200 - img.width) / 2;
                         marginTop = (200 - img.height) / 2;
-                        img.style.marginLeft = marginLeft;
-                        img.style.marginTop = marginTop;
+                        this.style.marginLeft = marginLeft;
+                        this.style.marginTop = marginTop;
                     }
                     reader.readAsDataURL(input.files[0]);
                 }
