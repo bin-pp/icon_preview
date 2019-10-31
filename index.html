@@ -21,14 +21,14 @@
                     reader.onload = function(e) {
                         var img = document.getElementById("preview");
                         img.setAttribute("src", e.target.result);
-                    }
-                    input.onload = function() {
                         setTimeout(function () {
-                            marginLeft = (200 - this.width) / 2;
-                            marginTop = (200 - this.height) / 2;
-                            this.style.marginLeft = marginLeft;
-                            this.style.marginTop = marginTop;
-                        }, 10)
+                            console.log(img.width);
+                            console.log(img.height);
+                            marginLeft = (200 - img.width) / 2;
+                            marginTop = (200 - img.height) / 2;
+                            img.style.marginLeft = marginLeft;
+                            img.style.marginTop = marginTop;
+                        }, 100);
                     }
                     reader.readAsDataURL(input.files[0]);
                 }
