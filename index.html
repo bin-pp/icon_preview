@@ -23,10 +23,12 @@
                         img.setAttribute("src", e.target.result);
                     }
                     input.onload = function() {
-                        marginLeft = (200 - img.width) / 2;
-                        marginTop = (200 - img.height) / 2;
-                        this.style.marginLeft = marginLeft;
-                        this.style.marginTop = marginTop;
+                        setTimeout(function () {
+                            marginLeft = (200 - img.width) / 2;
+                            marginTop = (200 - img.height) / 2;
+                            this.style.marginLeft = marginLeft;
+                            this.style.marginTop = marginTop;
+                        }, 10)
                     }
                     reader.readAsDataURL(input.files[0]);
                 }
